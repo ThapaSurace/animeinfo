@@ -9,10 +9,9 @@ import {
   NavbarMenu,
   NavbarContent,
   NavbarItem,
-  Link,
 } from "@nextui-org/react";
-import ThemeSwitcher from "../../components/ThemeSwitcher"
-
+import Link from "next/link";
+import ThemeSwitcher from "../../components/ThemeSwitcher";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -33,10 +32,12 @@ export default function App() {
   ];
 
   return (
-  <div className="">
+
       <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
+      maxWidth="full"
+      className="max-w-7xl mx-auto"
     >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle
@@ -52,23 +53,16 @@ export default function App() {
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-inherit">ACME</p>
+          <Link href="/">
+            {" "}
+            <p className="font-bold text-inherit text-2xl font-dancing">
+              Anime Hub
+            </p>
+          </Link>
         </NavbarBrand>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            Browse
-          </Link>
-        </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
-            Games
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link color="foreground" href="#">
-            News
-          </Link>
-        </NavbarItem>
+        <NavbarItem>Browse</NavbarItem>
+        <NavbarItem isActive>Games</NavbarItem>
+        <NavbarItem>News</NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
@@ -100,6 +94,6 @@ export default function App() {
         ))}
       </NavbarMenu>
     </Navbar>
-  </div>
+
   );
 }

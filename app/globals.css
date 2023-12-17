@@ -48,3 +48,8 @@ body {
 .swiper-button-prev:after, .swiper-button-next:after{
   color: white;
 }
+
+Link{
+  text-decoration: none;
+  color: white;
+}

@@ -11,6 +11,7 @@
   "dependencies": {
     "@next/font": "^14.0.4",
     "@nextui-org/react": "^2.2.9",
+    "@smastrom/react-rating": "^1.4.0",
     "@tanstack/react-query": "^5.14.0",
     "axios": "^1.6.2",
     "framer-motion": "^10.16.16",
@@ -19,11 +20,13 @@
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-fast-marquee": "^1.6.2",
     "react-multi-carousel": "^2.8.4",
     "react-responsive-carousel": "^3.2.23",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@types/node": "20.10.4",
     "@types/react": "18.2.45",
     "autoprefixer": "^10.0.1",

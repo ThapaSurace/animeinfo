@@ -1,7 +1,9 @@
 import {Card, CardHeader, Image } from "@nextui-org/react";
+import Link from "next/link";
 
 const AnimeCard = ({item}) => {
   return <>
+   <Link href={`/anime/${item.mal_id}`}>
    <Card className="col-span-12 sm:col-span-4 h-[300px] cursor-pointer">
       <CardHeader className="absolute z-10 bottom-1 flex-col !items-start">
         <h1 className="text-white">{item.titles[0].title}</h1>
@@ -13,6 +15,7 @@ const AnimeCard = ({item}) => {
         src={item.images.jpg.large_image_url}
       />
     </Card>
+   </Link>
   </>;
 };
 
