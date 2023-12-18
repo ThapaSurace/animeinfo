@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 import Marquee from "react-fast-marquee";
 import { Image } from "@nextui-org/react";
 
-const page = () => {
+const Page = () => {
   return (
     <div>
       <Navbar />
@@ -56,4 +56,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -3,9 +3,8 @@
 import React from "react";
 import { useParams } from "next/navigation";
 import { useSingleAnime } from "../../api/fetchApi";
-import { Image } from "@nextui-org/react";
 
-const page = () => {
+const Page = () => {
   const { id } = useParams();
   const { data, isLoading, error } = useSingleAnime(id);
 
@@ -72,4 +71,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -21,6 +21,7 @@ const config = {
         'feature_img': "url('https://r4.wallpaperflare.com/wallpaper/716/192/899/one-piece-1920x1080-anime-one-piece-hd-art-wallpaper-0940782d715aadfb7677682f4051066d.jpg')",
       }
     },
+    
   },
   corePlugins: {
     aspectRatio: false,
