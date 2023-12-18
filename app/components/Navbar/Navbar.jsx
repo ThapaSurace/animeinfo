@@ -11,7 +11,8 @@ import {
   NavbarItem,
 } from "@nextui-org/react";
 import Link from "next/link";
-import ThemeSwitcher from "../../components/ThemeSwitcher";
+import GenreDropDown from "../../components/genere/GenreDropDown"
+
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -54,23 +55,27 @@ export default function App() {
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
           <Link href="/">
-            {" "}
+           
             <p className="font-bold text-inherit text-2xl font-dancing">
               Anime Hub
             </p>
           </Link>
         </NavbarBrand>
-        <NavbarItem>Browse</NavbarItem>
+        <NavbarItem>
+          <GenreDropDown />
+        </NavbarItem>
         <NavbarItem isActive>Games</NavbarItem>
         <NavbarItem>News</NavbarItem>
       </NavbarContent>
 
       <NavbarContent justify="end">
-        <Crown />
-        <Search />
-        <Bookmark />
-        <CircleUserRound />
-        <ThemeSwitcher />
+       <div className="flex flex-col items-center">
+       <Crown className="cursor-pointer text-yellow-500" />
+       <span className="text-[10px]">Premium</span>
+       </div>
+        <Search className="cursor-pointer" />
+        <Bookmark className="cursor-pointer" />
+        <CircleUserRound className="cursor-pointer" />
       </NavbarContent>
 
       <NavbarMenu>

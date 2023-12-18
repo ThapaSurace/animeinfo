@@ -49,3 +49,20 @@ export const useTopAnimeData = () => {
         }),
   });
 };
+
+//get anime genre
+export const useAnimeGenreData = () => {
+  return useQuery({
+    queryKey: ["genre"],
+    queryFn: async () =>
+      await newRequest
+        .get("/genres/anime", {
+          params: {
+            limit: 10,
+          },
+        })
+        .then((res) => {
+          return res.data.data.slice(0, 10);
+        }),
+  });
+};
