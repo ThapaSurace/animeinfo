@@ -12,7 +12,7 @@ const Page = () => {
 
   console.log(currentPage);
   return (
-    <div className="max-w-6xl mx-auto  px-4 md:px-6 lg:px-8 my-10">
+    <div className=" max-w-xs sm:max-w-xl md:max-w-6xl mx-auto  px-4 md:px-6 lg:px-8 my-10">
       {isLoading ? (
         "loading..."
       ) : error ? (

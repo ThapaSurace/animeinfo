@@ -28,7 +28,7 @@ export const useSingleAnime = (id) => {
       await newRequest
         .get(`/anime/${id}`)
         .then((res) => {
-          return res.data;
+          return res.data.data;
         }),
   });
 };
