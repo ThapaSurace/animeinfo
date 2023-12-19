@@ -4,7 +4,7 @@ import { useTopAnimeData } from '../../api/fetchApi'
 import AnimelistSlider from "../swiper/AnimelistSlider"
 
 const TopAnimeList = () => {
-const {data,isLoading,error} = useTopAnimeData()
+const {data,isLoading,error} = useTopAnimeData(1)
   return (
     <AnimelistSlider data={data} isLoading={isLoading} error={error} />
   )

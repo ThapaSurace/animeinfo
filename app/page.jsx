@@ -1,16 +1,15 @@
 import React from "react";
-import Navbar from "./components/Navbar/Navbar";
 import HeaderCarousel from "./components/swiper/HeaderCarousel";
 import SeasonalAnimeList from "./components/lists/SeasonalAnimeList";
 import TopAnimeList from "./components/lists/TopAnimeList";
-import Footer from "./components/Footer";
 import Marquee from "react-fast-marquee";
 import { Image } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
+import Link from "next/link";
 
 const Page = () => {
   return (
     <div>
-      <Navbar />
       <HeaderCarousel />
       <div className="my-16 px-6">
         <div className="mb-6">
@@ -33,7 +32,20 @@ const Page = () => {
         <TopAnimeList />
       </div>
       <div className="sm:h-screen flex justify-center items-center px-6 lg:px-0">
-        <div className=" bg-feature_img h-96 sm:h-[70%] max-w-7xl mx-auto w-full rounded-lg bg-center bg-no-repeat bg-cover"></div>
+        <div className=" bg-feature_img h-96 sm:h-[70%] max-w-7xl mx-auto w-full rounded-lg bg-center bg-no-repeat bg-cover relative">
+          <Button className="absolute bottom-10 right-10 bg-orange-500 font-bold text-4xl py-4" size="lg" radius="sm">Watch Now</Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 justify-center items-center my-10 lg:my-16 py-6 lg:py-10 px-4">
+      <Image
+            src="pngegg.png"
+            alt="browse_image"
+            className="object-center object-cover w-20"
+          />
+        <p className="text-center text-xl mdtext-2xl">Still looking for something to watch? <br />  Check out our full library</p>
+       <Link href="/animelists">
+       <Button className="text-orange-500 border-yellow-500" variant="ghost" size="md">View All</Button>
+       </Link>
       </div>
       <Marquee>
         <div className="flex items-end">
@@ -51,7 +63,6 @@ const Page = () => {
           />
         </div>
       </Marquee>
-      <Footer />
     </div>
   );
 };

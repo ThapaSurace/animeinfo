@@ -14,7 +14,7 @@ export const useAnimeRecommendationData = () => {
           },
         })
         .then((res) => {
-          return res.data.data;
+          return res.data;
         }),
   });
 };
@@ -28,24 +28,21 @@ export const useSingleAnime = (id) => {
       await newRequest
         .get(`/anime/${id}`)
         .then((res) => {
-          return res.data.data;
+          return res.data;
         }),
   });
 };
 
 //get top animes
-export const useTopAnimeData = () => {
+export const useTopAnimeData = (page) => {
   return useQuery({
-    queryKey: ["top"],
+    queryKey: ["top",page],
+    staleTime: 300000,
     queryFn: async () =>
       await newRequest
-        .get("/top/anime", {
-          params: {
-            limit: 20,
-          },
-        })
+        .get(`/top/anime?page=${page}`)
         .then((res) => {
-          return res.data.data;
+          return res.data;
         }),
   });
 };

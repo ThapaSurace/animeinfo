@@ -46,7 +46,7 @@ const AnimelistSlider = ({ data, isLoading, error }) => {
           ? "loading..."
           : error
           ? "Something went wrong!"
-          : data.map((item, index) => (
+          : data?.data?.map((item, index) => (
               <SwiperSlide key={index} virtualIndex={index}>
                 <AnimeCard item={item} />
               </SwiperSlide>
